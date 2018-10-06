@@ -1,0 +1,27 @@
+<div class="containter w-25" style="margin-left: auto; margin-right: auto" *ngIf="hero">
+  <mdb-card>
+    <!--Card image-->
+    <mdb-card-img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(97).jpg" alt="Card image cap"></mdb-card-img>
+    <!--Card content-->
+    <mdb-card-body>
+
+      <!--Title-->
+      <mdb-card-title>
+        <h4>{{hero.name}}</h4>
+      </mdb-card-title>
+
+      <div class="md-form">
+          <input mdbInputDirective disabled="true" value="{{hero.id}}" type="text" id="form1" class="form-control">
+          <label for="form1" class="">Id</label>
+        </div>
+
+      <div class="md-form">
+        <input mdbInputDirective type="text" [(ngModel)]="hero.name" id="form2" class="form-control">
+        <label for="form2" class="">Name</label>
+      </div>
+
+      <button (click)="goBack()" class="btn btn-primary waves-light" mdbWavesEffect>Go back</button>
+    </mdb-card-body>
+  </mdb-card>
+
+</div>

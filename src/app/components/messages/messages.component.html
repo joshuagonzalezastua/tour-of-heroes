@@ -1,0 +1,10 @@
+<div class="container" *ngIf="messageService.messages.length">
+
+  <h2>Messages</h2>
+  <button mdbBtn type="button" color="danger" (click)="messageService.clear()" class="waves-light" mdbWavesEffect>clear</button>
+
+  <div *ngFor='let message of messageService.messages' class="alert alert-primary" role="alert">
+    {{message}}
+  </div>
+
+</div>

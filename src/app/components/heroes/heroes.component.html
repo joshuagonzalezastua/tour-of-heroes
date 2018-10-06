@@ -1,0 +1,13 @@
+<div class="container">
+  <table class="table table-bordered table-hover table-sm">
+    <thead class="red accent-4 white-text">
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+    </thead>
+    <tr *ngFor="let hero of heroes">
+      <td routerLink="/detail/{{hero.id}}">{{hero.id}}</td>
+      <td routerLink="/detail/{{hero.id}}">{{hero.name}}</td>
+    </tr>
+  </table>
+  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+</div>
