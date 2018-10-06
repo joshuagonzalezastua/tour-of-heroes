@@ -3,11 +3,25 @@
     <thead class="red accent-4 white-text">
       <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col"></th>
     </thead>
     <tr *ngFor="let hero of heroes">
       <td routerLink="/detail/{{hero.id}}">{{hero.id}}</td>
       <td routerLink="/detail/{{hero.id}}">{{hero.name}}</td>
+      <td>
+        <button (click)="delete(hero)" class="btn btn-danger waves-light" mdbWavesEffect>X</button>
+      </td>
     </tr>
   </table>
-  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+  <br />
+  <br />
+
+  <div class="md-form">
+    <input mdbInputDirective type="text" #heroName id="form2" class="form-control">
+    <label for="form2" class="">Name</label>
+  </div>
+
+  <button (click)="add(heroName.value); heroName.value=''" class="btn btn-success waves-light" mdbWavesEffect>Add</button>
+
 </div>
