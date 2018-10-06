@@ -4,6 +4,7 @@ import { Hero } from 'src/app/entities/hero';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { errorHandler } from '@angular/platform-browser/src/browser';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -57,6 +58,16 @@ export class HeroService {
     return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
       tap(_ => this.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
+  searchHeroes(term: string): Observable<Hero[]> {
+    if(!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
+      tap(_ => this.log(`found heroes matching ${term}`)),
+      catchError(this.handleError<Hero[]>('searchHeroes', []))
     );
   }
 
