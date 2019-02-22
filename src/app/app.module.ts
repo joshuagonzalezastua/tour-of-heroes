@@ -9,7 +9,6 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
-import { MessagesComponent } from './components/messages/messages.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -20,7 +19,6 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
-    MessagesComponent,
     DashboardComponent,
     NavbarComponent,
     HeroSearchComponent
